@@ -1,0 +1,38 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.main-container {
+    height: 100%;
+  }
+  
+  .main-sidenav-content {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .main-sidenav {
+    padding: 20px;
+    min-width: 200px;
+  }
+
+  [side-nav-button] {
+      margin-bottom: 4px;
+  }
+
+  [side-nav-menu] {
+      width: 100%;
+  }
+
+  [limitsCard] {
+      min-width: 300px;
+  }
+
+  [limitsCardHeader] /deep/ {
+      padding: 10px;
+      background-color: #673ab7;
+      color: white;
+      margin-bottom: 20px;
+  }
+
+  [titlebar] {
+      margin-bottom: 20px;
+  }
