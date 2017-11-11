@@ -7,9 +7,9 @@
 @include mat-core();
 
 $dexter-blue: (
-    100: #8C9DB2,
-    500: #2A69B3,
-    900: #173A62,
+    100: #4A7fB1,
+    500: #095381,
+    900: #002B54,
     contrast: (
         50: $black-87-opacity,
         100: $black-87-opacity,
@@ -29,9 +29,9 @@ $dexter-blue: (
 );
 
 $dexter-gray: (
-    100: #ACACAC,
-    500: #5C5C5C,
-    900: #232323,
+    100: #777274,
+    500: #4B4749,
+    900: #232022,
     contrast: (
         50: $black-87-opacity,
         100: $black-87-opacity,
@@ -50,20 +50,16 @@ $dexter-gray: (
     )
 );
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue.
-// $dexter-app-primary: mat-palette($mat-cyan, 900, 100, 900);
 $dexter-app-primary: mat-palette($dexter-blue, 500, 100, 900);
 $dexter-app-accent:  mat-palette($dexter-gray, 500, 100, 900);
-
-// The warn palette is optional (defaults to red).
 $dexter-app-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$dexter-app-theme: mat-light-theme($dexter-app-primary, $dexter-app-accent, $dexter-app-warn);
+$dexter-light-theme: mat-light-theme($dexter-app-primary, $dexter-app-accent, $dexter-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($dexter-app-theme);
+@include angular-material-theme($dexter-light-theme);
+
+

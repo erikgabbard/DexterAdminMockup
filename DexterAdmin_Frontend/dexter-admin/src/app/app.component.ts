@@ -3,6 +3,8 @@ import { MatListModule } from '@angular/material/list';
 import { ILimitInfo } from './limit-info';
 import { NgForm, FormControl, Validators, FormGroup } from '@angular/forms';
 import { LimitsPocService } from './services/limits-poc.service';
+import { MatSnackBar, MatDialog } from '@angular/material';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +16,10 @@ export class AppComponent {
   limitInfo: ILimitInfo;
   isLoading = false;
 
-  constructor(private limitApi: LimitsPocService) {
+  constructor(private limitApi: LimitsPocService, public snackBar: MatSnackBar, public loadingSpinner: MatDialog) {
     this.limitInfo = {} as ILimitInfo;
+    this.limitInfo.newLimit = undefined;
+
     this.limitsForm = new FormGroup({
       costCenterId: new FormControl({ value: '', disabled: true }),
       limit: new FormControl({ value: '', disabled: true }),
@@ -30,31 +34,46 @@ export class AppComponent {
 
   getLimitInfo() {
     this.isLoading = true;
+    this.openLoadingSpinner();
     this.limitInfo.marshaCode = this.limitInfo.marshaCode.toLocaleUpperCase();
     this.limitApi.getLimitInfo(this.limitInfo.marshaCode)
       .subscribe(
-        apiResponse => {
-          console.log('response in component', apiResponse);
-          this.limitInfo = apiResponse;
-          this.isLoading = false;
-        },
-        error => {
-          if (error.status === 404) {
-            console.log(404);
-          }
+      apiResponse => {
+        this.limitInfo = apiResponse;
+        this.limitInfo.newLimit = undefined;
+        this.isLoading = false;
+        this.loadingSpinner.closeAll();
+      },
+      error => {
+        if (error.status === 404) {
+          this.snackBar.open(`MARSHA code ${this.limitInfo.marshaCode} could not be found.`, 'Close');
+          this.limitInfo.marshaCode = '';
+        } else {
+          // Display a dialog showing the server error.
+          // But for the time being, just log it to the console.
           console.log('error in component', error);
+        }
       });
   }
 
   onSubmit() {
+    this.isLoading = true;
+    this.openLoadingSpinner();
     if (this.limitsForm.valid) {
-      console.log('limit info', this.limitInfo);
       this.limitApi.updateLimitInfo(this.limitInfo)
         .subscribe(apiResponse => {
-          console.log('new limit info', apiResponse);
-          // maybe display a saved message
+          this.limitInfo = apiResponse.json();
+          this.limitInfo.newLimit = undefined;
+          this.isLoading = false;
+          this.loadingSpinner.closeAll();
+          this.snackBar.open(`Limit updated to ${this.limitInfo.limit}.`, 'Close');
         });
     }
   }
 
+  openLoadingSpinner(): void {
+    const dialogRef = this.loadingSpinner.open(LoadingSpinnerComponent, {
+      data: { loading: true }
+    });
+  }
 }

@@ -7,8 +7,8 @@
     <ProjectGuid>{FE3E6B7A-62B1-46A1-B08A-346A864965C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrderLimitPoC.Tests</RootNamespace>
-    <AssemblyName>OrderLimitPoC.Tests</AssemblyName>
+    <RootNamespace>OrderLimitApi.Tests</RootNamespace>
+    <AssemblyName>OrderLimitApi.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -64,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OrderLimitPoC\OrderLimitPoC.csproj">
+    <ProjectReference Include="..\OrderLimitApi\OrderLimitApi.csproj">
       <Project>{007CD49F-B0ED-4384-B99D-C8D258AE2FF8}</Project>
-      <Name>OrderLimitPoC</Name>
+      <Name>OrderLimitApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿using OrderLimitPoC.Models;
+﻿using OrderLimitApi.Models;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -6,7 +6,7 @@ using System.Web.Http;
 using System.Data;
 using System.Web.Http.Cors;
 
-namespace OrderLimitPoC.Controllers
+namespace OrderLimitApi.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LimitsController : ApiController
@@ -87,7 +87,7 @@ namespace OrderLimitPoC.Controllers
                         sqlCommand.CommandType = CommandType.StoredProcedure;
                         sqlCommand.CommandText = ConfigurationManager.AppSettings["UpdateLimitStoredProc"];
                         sqlCommand.Parameters.AddWithValue("MARSHA", model.MarshaCode);
-                        sqlCommand.Parameters.AddWithValue("limit", model.Limit);
+                        sqlCommand.Parameters.AddWithValue("limit", model.NewLimit);
 
                         sqlCommand.ExecuteNonQuery();
                     }
@@ -104,7 +104,9 @@ namespace OrderLimitPoC.Controllers
                 return InternalServerError(ex);
             }
 
-            return Ok();
+            model.Limit = model.NewLimit;
+
+            return Ok(model);
         }
     }
 }

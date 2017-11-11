@@ -1,7 +1,8 @@
 <mat-sidenav-container fxFlex class="main-container">
-  <mat-toolbar titlebar color="primary">
+  <mat-toolbar titlebar color="accent">
     <h1>Dexter Admin</h1>
   </mat-toolbar>
+
   <mat-sidenav #sidenav mode="side" opened="true" fxLayout="column" fxLayoutAlign="start stretch" class="main-sidenav">
     <button side-nav-button mat-raised-button color="primary" [matMenuTriggerFor]="homeMenu">Home</button>
     <mat-menu side-nav-menu #homeMenu="matMenu" xPosition="after" [overlapTrigger]="false">
@@ -63,10 +64,7 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content fxLayoutAlign="center">
-        <div *ngIf="isLoading">
-          <mat-spinner class="loading-spinner" [color]="accent" [mode]="indeterminate">
-          </mat-spinner>
-        </div>
+        
         <form [formGroup]="limitsForm" (ngSubmit)="onSubmit()" novalidate>
           <div fxFill>
             <div fxLayout="row" fxLayoutAlign="start stretch">
@@ -118,7 +116,8 @@
         <button type="submit" (click)="onSubmit()" mat-raised-button color="primary" [disabled]="limitsForm.invalid">Set Available</button>
       </mat-card-actions>
     </mat-card>
-    <p copyright fxLayoutAlign="end center">© 2012 - 2016 by Dexter Solutions, Inc. All rights reserved.</p>
-  </div>
 
+    <footer copyright fxLayoutAlign="end center">© 2012 - 2016 by Dexter Solutions, Inc. All rights reserved.</footer>
+  
+  </div>
 </mat-sidenav-container>

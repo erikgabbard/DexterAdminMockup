@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace OrderLimitPoC.Models
+namespace OrderLimitApi.Models
 {
     public class LimitsModel
     {
         public int CostCenterId { get; set; }
 
         public int Limit { get; set; }
+
+        public int NewLimit { get; set; }
 
         public int OnOrder { get; set; }
 

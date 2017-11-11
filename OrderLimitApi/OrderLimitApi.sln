@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLimitPoC", "OrderLimitPoC\OrderLimitPoC.csproj", "{007CD49F-B0ED-4384-B99D-C8D258AE2FF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLimitApi", "OrderLimitApi\OrderLimitApi.csproj", "{007CD49F-B0ED-4384-B99D-C8D258AE2FF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLimitPoC.Tests", "OrderLimitPoC.Tests\OrderLimitPoC.Tests.csproj", "{FE3E6B7A-62B1-46A1-B08A-346A864965C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLimitApi.Tests", "OrderLimitApi.Tests\OrderLimitApi.Tests.csproj", "{FE3E6B7A-62B1-46A1-B08A-346A864965C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -20,11 +20,14 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
+  MatDialogModule
 } from '@angular/material';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +47,11 @@ import {
     ReactiveFormsModule,
     FormsModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [LimitsPocService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoadingSpinnerComponent]
 })
 export class AppModule { }

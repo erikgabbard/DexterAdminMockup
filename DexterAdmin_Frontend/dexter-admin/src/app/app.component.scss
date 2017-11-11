@@ -1,38 +1,39 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '~@angular/material/theming';
+@import '../assets/themes/dexter-theme.scss';
 
 .main-container {
-    height: 100%;
-  }
-  
-  .main-sidenav-content {
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .main-sidenav {
-    padding: 20px;
-    min-width: 200px;
-  }
+     height: 100%;
+ }
 
-  [side-nav-button] {
-      margin-bottom: 4px;
-  }
+ .main-sidenav-content {
+     align-items: center;
+     justify-content: center;
+ }
 
-  [side-nav-menu] {
-      width: 100%;
-  }
+ .main-sidenav {
+     padding: 20px;
+     min-width: 200px;
+ }
 
-  [limitsCard] {
-      min-width: 300px;
-  }
+ [side-nav-button] {
+     margin-bottom: 4px;
+ }
 
-  [limitsCardHeader] /deep/ {
-      padding: 10px;
-      background-color: #673ab7;
-      color: white;
-      margin-bottom: 20px;
-  }
+ [side-nav-menu] {
+     width: 100%;
+ }
 
-  [titlebar] {
-      margin-bottom: 20px;
+ [limitsCard] {
+     min-width: 300px;
+ }
+
+ [titlebar] {
+     margin-bottom: 20px;
+ }
+
+ [limitsCardHeader] /deep/ {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: mat-color($dexter-app-primary);
+    color: white;
   }
