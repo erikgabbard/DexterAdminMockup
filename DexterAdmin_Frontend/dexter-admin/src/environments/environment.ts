@@ -6,4 +6,12 @@
 export const environment = {
   production: false,
   limitsApiEndpoint: 'http://localhost:52363/OrderLimitApi',
+  firebase: {
+    apiKey: 'AIzaSyCF6ZZ6E6vw1n7E4sH0szjUTm9LXve3XVE',
+    authDomain: 'dexter-admin-poc.firebaseapp.com',
+    databaseURL: 'https://dexter-admin-poc.firebaseio.com',
+    projectId: 'dexter-admin-poc',
+    storageBucket: 'dexter-admin-poc.appspot.com',
+    messagingSenderId: '483273449091'
+  }
 };

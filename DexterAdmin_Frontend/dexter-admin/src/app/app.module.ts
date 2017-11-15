@@ -7,6 +7,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LimitsPocService } from './services/limits-poc.service';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
 
 import {
   MatButtonModule,
@@ -22,12 +28,14 @@ import {
   MatSnackBarModule,
   MatDialogModule
 } from '@angular/material';
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +56,10 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     FormsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [LimitsPocService],
   bootstrap: [AppComponent],

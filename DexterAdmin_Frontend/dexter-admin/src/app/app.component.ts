@@ -5,18 +5,25 @@ import { NgForm, FormControl, Validators, FormGroup } from '@angular/forms';
 import { LimitsPocService } from './services/limits-poc.service';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   limitsForm: FormGroup;
   limitInfo: ILimitInfo;
   isLoading = false;
 
-  constructor(private limitApi: LimitsPocService, public snackBar: MatSnackBar, public loadingSpinner: MatDialog) {
+  constructor(
+    private limitApi: LimitsPocService,
+    public snackBar: MatSnackBar,
+    public loadingSpinner: MatDialog,
+    public db: AngularFirestore
+  ) {
     this.limitInfo = {} as ILimitInfo;
     this.limitInfo.newLimit = undefined;
 
@@ -36,8 +43,7 @@ export class AppComponent {
     this.isLoading = true;
     this.openLoadingSpinner();
     this.limitInfo.marshaCode = this.limitInfo.marshaCode.toLocaleUpperCase();
-    this.limitApi.getLimitInfo(this.limitInfo.marshaCode)
-      .subscribe(
+    this.limitApi.getLimitInfo(this.limitInfo.marshaCode).subscribe(
       apiResponse => {
         this.limitInfo = apiResponse;
         this.limitInfo.newLimit = undefined;
@@ -46,28 +52,34 @@ export class AppComponent {
       },
       error => {
         if (error.status === 404) {
-          this.snackBar.open(`MARSHA code ${this.limitInfo.marshaCode} could not be found.`, 'Close');
+          this.snackBar.open(
+            `MARSHA code ${this.limitInfo.marshaCode} could not be found.`,
+            'Close'
+          );
           this.limitInfo.marshaCode = '';
         } else {
           // Display a dialog showing the server error.
           // But for the time being, just log it to the console.
           console.log('error in component', error);
         }
-      });
+      }
+    );
   }
 
   onSubmit() {
     this.isLoading = true;
     this.openLoadingSpinner();
     if (this.limitsForm.valid) {
-      this.limitApi.updateLimitInfo(this.limitInfo)
-        .subscribe(apiResponse => {
-          this.limitInfo = apiResponse.json();
-          this.limitInfo.newLimit = undefined;
-          this.isLoading = false;
-          this.loadingSpinner.closeAll();
-          this.snackBar.open(`Limit updated to ${this.limitInfo.limit}.`, 'Close');
-        });
+      this.limitApi.updateLimitInfo(this.limitInfo).subscribe(apiResponse => {
+        this.limitInfo = apiResponse.json();
+        this.limitInfo.newLimit = undefined;
+        this.isLoading = false;
+        this.loadingSpinner.closeAll();
+        this.snackBar.open(
+          `Limit updated to ${this.limitInfo.limit}.`,
+          'Close'
+        );
+      });
     }
   }
 

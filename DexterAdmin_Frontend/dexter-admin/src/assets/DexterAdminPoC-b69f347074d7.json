@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dexter-admin-poc",
+  "private_key_id": "b69f347074d7f5eb2dd9a8449df82043b51c9711",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDWTAa6y+WnTt8E\nLsefw7vPJlpdu3RwNDKoR43k5dsUTkjPzhUqoqNxAhOimb0EWa+KHs4U2/UdVsjU\nGiiuLozlLEkk09NQpp0oJ9TQn4bD1XSfERESd6w1vsDJZW35Nq0gG/Pdhq3EJj3E\ntFQZJ30PeTKP1KIYiCC/W44sdIaHUSbMBB8JdoIUiZRd6+vP9Two8B1kt+nsJzsd\nEcNZz3VJfzBea7Pz/Lo5FP9Qd8TtJx9Uip8e5pYHAvUMlyhKPRWxS6Rc/ZmcKnnN\n1yNuX/6HVHLZwkn7vmxWi01SHYNARm4vqsQ3EgvUn+kyzkUnX+LOcjHiPo735KPL\nNuzocW9ZAgMBAAECggEAFIFBDhfjPT1y4bizrXX6RyWbdTdR+ogGFlvFaCL10eU1\nOpwUoqgeBTrOg+sbvtoxjaDptW2AEFr82622mYcXAHk6tPlHUaLlrAFWr9Ep4Rxw\nPKWyiV611c0vL34i9hsNGQLPtHFV+Gwz0hnyp5cDlIrTY5eUHI6O+pxxN8/9DN6y\nK1pEXxujDg3OTKL6ODrVM4/UNa+rlTMdjqJxK/89z539Gwr7ymopIe8wG8sQFfsE\nTWTas3CbXrr96wXfiAdoT9WMOTbKNatbxNzlQdoXtdf//sKg4huP0Wk0/JTNg8ox\nkoBvt/nBWkYoPYB/p8y0ChYynR15tZoBJBkOfRQ+wQKBgQD7452fESheCnJK2ODd\nIF6z8+kJJOlTtgVPZO0vGTjwwdSpXX4qcnlv6kwx/BicVGp4dpu6Uzm6QlyJn4Kj\ni1OS+gQRwlqFWJQ80GKSkJh/Ev2xG9oou0nHWMOWSLYJAErjJ+rUxDfKHXCZtlzd\ni3cFJr+Qllcg3BIIq7smCiDZmQKBgQDZy1oTQvyVcy6MHugL978swEvZy1TxFHsJ\n3MrXYQqL3RKATqhWb0BZBqF8tXAxLET3O19DFhLvgLmkOfuJj9RlXoJZ7M8z0oXi\nwsEhfpHBj4yqeNAS5INIZjioZREm6jVtK4Vn2KW738C+gS8gTv0Dhw9Oj0jwgFo2\nU0FQV3RbwQKBgQCNXdB/jpSWOsysPw3sbJdZ7YETFbkxtw1B4sXO0hwH2vDsYMFH\nN1n6Ooeq4e46BpJ+qyp5Ju5WH5ppzrD18mLkMRcJlIdTIUSI4PcBhM9hOhpRRO1q\nQLqGe8XBWWt4n8ZnuGZuJPWepGkmi5eQ6w3QQU/v6MBbe8dPQHpXPgXzuQKBgQCs\nRPrkjXG4zLiewLuO69HdleTpSrnPTwHbVTdkkS+EXcMKliz04V6mjGYjfGhXnMqY\nO/An4kfsBYfRbMOXlZrM66pzcqqaNQUNzjpxQeoMjn0XQiRjLTjihWh/WiHtBAhq\nZ6hH8cd2CZAtn4UlKxVaOvRSkWeCRCQXIFdjMymogQKBgH8BwzULX2wU8prjbIaA\nYrs8OlOdYojUypr7hwe1yG+JQnuNUV7Hx2+3AVOqtNT+ahjtwbhtlaOFJ+aGvzEu\n7nBr4EtpDd9/LdFy2X4gkh29k3tr3xRzc/F8/7lCogN4wjYLNDax/MJL2vG52djL\nkIK5hjtUhG+UlrBvtcRgdiQy\n-----END PRIVATE KEY-----\n",
+  "client_email": "dexter-admin-service@dexter-admin-poc.iam.gserviceaccount.com",
+  "client_id": "110655682343561027935",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dexter-admin-service%40dexter-admin-poc.iam.gserviceaccount.com"
+}

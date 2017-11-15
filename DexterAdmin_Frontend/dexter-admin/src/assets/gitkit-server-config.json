@@ -1,0 +1,8 @@
+{
+  "clientId": "483273449091-a4cee3608pnqrsi77q38b5vlp946j5vn.apps.googleusercontent.com",
+  "projectId": "dexter-admin-poc",
+  "serviceAccountEmail": "",
+  "serviceAccountPrivateKeyFile": "/dexter-admin/src/assets/DexterAdminPoC-b69f347074d7.json",
+  "widgetUrl": "http://localhost:4200/login",
+  "cookieName": "gtoken"
+}
