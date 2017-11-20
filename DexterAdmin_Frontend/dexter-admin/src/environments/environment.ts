@@ -13,5 +13,6 @@ export const environment = {
     projectId: "dexter-admin-poc",
     storageBucket: "dexter-admin-poc.appspot.com",
     messagingSenderId: "483273449091"
-  }
+  },
+  host: "http://localhost:4200"
 };

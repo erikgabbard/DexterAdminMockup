@@ -3,9 +3,9 @@ import { Observable } from "rxjs/Observable";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase/app";
 import * as firebaseui from "firebaseui";
-import { FirebaseUISignInSuccess } from "firebaseui-angular";
 import { AuthService } from "../core/services/auth.service";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { environment } from "../../environments/environment";
 
 @Component({
   selector: "app-login",
@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logout() {
-    this.authService.signOut();
+  login() {
+    this.authService.googleLogin();
   }
 
   openDialog(): void {
@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
     dialogRef.afterClosed().subscribe(resetResult => {
       if (resetResult) {
         this.authService.signOut();
+        document.location.assign(`https://accounts.google.com/Logout?continue=${environment.host}`);
       }
     });
   }

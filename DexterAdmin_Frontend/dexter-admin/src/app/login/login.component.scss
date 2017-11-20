@@ -16,14 +16,15 @@
 // }
 
 [avatar-sm] {
-  max-width: 95%;
-  max-height: 95%;
-  margin: 2px 10px 2px 0 !important;
-  border-radius: 3px;
+  max-width: 40px;
+  max-height: 40px;
+  margin: 3px 10px 2px 0 !important;
+  border-radius: 50%;
 }
 
 [avatar-lg] {
   width: 75px;
   border-radius: 3px;
   margin-right: 5em !important;
+  border-radius: 50%;
 }

@@ -1,3 +1,8 @@
 <button mat-raised-button userPanel color="accent" *ngIf="loggedInUser" (click)="openDialog()">
-  <img avatar-sm src="{{loggedInUser.photoURL}}" alt="Member Avatar" /> {{loggedInUser.displayName}}
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <img avatar-sm src="{{loggedInUser.photoURL}}" alt="Member Avatar" /> {{loggedInUser.displayName}}
+  </div>
 </button>
+<div *ngIf="!loggedInUser">
+    <button id="loginBtn" fxFlexAlign="end" mat-raised-button color="accent" (click)="login()">Sign In</button>
+</div>

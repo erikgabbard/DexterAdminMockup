@@ -22,12 +22,13 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> | boolean {
     return this.auth.user
       .take(1)
-      .map(user => !!user)
-      .do(loggedIn => {
-        if (!loggedIn) {
-          console.log("access denied");
-          this.auth.googleLogin();
-        }
-      });
+      .map(user => !!user);
+      // .do(loggedIn => {
+      //   if (!loggedIn) {
+      //     console.log("access denied");
+
+      //     this.auth.googleLogin();
+      //   }
+      // });
   }
 }

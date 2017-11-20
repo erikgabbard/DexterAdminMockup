@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { RouterModule, Router, Routes } from "@angular/router";
 import { AppRoutingModule } from "../app-routing.module";
+import { AuthService } from "../core/services/auth.service";
+import * as firebase from "firebase/app";
 
 import {
   MatButtonModule,
@@ -24,8 +26,13 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
+  loggedInUser: firebase.User;
 
-  constructor(private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {
+    this.authService.user.subscribe(u => {
+      this.loggedInUser = u;
+    });
+   }
 
   ngOnInit() {
   }
