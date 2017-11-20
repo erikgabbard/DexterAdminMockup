@@ -1,10 +1,10 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
+@import './dexter-font.scss';
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
+$custom-typography: mat-typography-config($font-family: $dexter-font);
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);
 
 $dexter-blue: (
     100: #4A7fB1,
@@ -54,12 +54,8 @@ $dexter-app-primary: mat-palette($dexter-blue, 500, 100, 900);
 $dexter-app-accent:  mat-palette($dexter-gray, 500, 100, 900);
 $dexter-app-warn:    mat-palette($mat-red);
 
-// Create the theme object (a Sass map containing all of the palettes).
 $dexter-light-theme: mat-light-theme($dexter-app-primary, $dexter-app-accent, $dexter-app-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($dexter-light-theme);
 
 

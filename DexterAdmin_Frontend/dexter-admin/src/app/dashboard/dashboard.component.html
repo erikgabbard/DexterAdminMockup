@@ -1,0 +1,52 @@
+<div fxLayout="column" fxLayoutAlign="space-around stretch" class="main-sidenav-content">
+<button side-nav-button mat-raised-button color="primary" [matMenuTriggerFor]="homeMenu">Home</button>
+<mat-menu side-nav-menu #homeMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+  <button mat-menu-item (click)="onClick('home')">Barcode</button>
+  <button mat-menu-item (click)="onClick('home')">Trimbox</button>
+</mat-menu>
+
+<button side-nav-button mat-raised-button color="primary" [matMenuTriggerFor]="opstwoMenu">Ops 2</button>
+<mat-menu #opstwoMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+  <button mat-menu-item>Add Template From</button>
+  <button mat-menu-item>Library Image Permission</button>
+  <button mat-menu-item>Users</button>
+  <button mat-menu-item>Content</button>
+  <button mat-menu-item>Items</button>
+  <button mat-menu-item (click)="onClick('ops2/limits')">Limits</button>
+  <button mat-menu-item>Item Priority Table Update</button>
+</mat-menu>
+
+<button side-nav-button mat-raised-button color="primary" [matMenuTriggerFor]="opsoneMenu">Ops 1</button>
+<mat-menu side-nav-menu #opsoneMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+  <button mat-menu-item>Add Template From</button>
+  <button mat-menu-item>Library Image Permission</button>
+  <button mat-menu-item>Users</button>
+  <button mat-menu-item>Content</button>
+  <button mat-menu-item>Items</button>
+  <button mat-menu-item>Limits</button>
+  <button mat-menu-item>Copy Template From Parent</button>
+</mat-menu>
+
+<button side-nav-button mat-raised-button color="primary" [matMenuTriggerFor]="erpMenu">ERP</button>
+<mat-menu #erpMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+  <button mat-menu-item>Address Shipping Converter</button>
+  <button mat-menu-item>Time Off Summary Converter</button>
+  <button mat-menu-item>Property Code Upload</button>
+</mat-menu>
+
+<button side-nav-button mat-raised-button color="primary" [matMenuTriggerFor]="ffoMenu">Four51</button>
+<mat-menu #ffoMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+  <button mat-menu-item>New Account Onboarding</button>
+</mat-menu>
+
+<button side-nav-button mat-raised-button color="primary" [matMenuTriggerFor]="adminMenu">Administration</button>
+<mat-menu #adminMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+  <button mat-menu-item>Google Access</button>
+  <button mat-menu-item>Security</button>
+  <button mat-menu-item>Calls</button>
+  <button mat-menu-item>Conversion</button>
+  <button mat-menu-item>Integrations</button>
+  <button mat-menu-item>Integrations Log</button>
+  <button mat-menu-item>URL List</button>
+</mat-menu>
+</div>

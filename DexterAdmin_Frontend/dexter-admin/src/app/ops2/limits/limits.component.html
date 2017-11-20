@@ -1,0 +1,59 @@
+  <mat-card limitsCard>
+    <mat-card-header limitsCardHeader>
+      <mat-toolbar titlebar color="accent" fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-panel-title>{{title}}</mat-panel-title>
+      </mat-toolbar>
+    </mat-card-header>
+    <mat-card-content fxLayoutAlign="center">
+
+      <form [formGroup]="limitsForm" (ngSubmit)="onSubmit()" novalidate>
+        <div fxFill>
+          <div fxLayout="row" fxLayoutAlign="start stretch">
+            <mat-form-field>
+              <input matInput placeholder="MARSHA Code" [(ngModel)]="limitInfo.marshaCode" formControlName="marshaCode" (change)="getLimitInfo()">
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start stretch">
+            <mat-form-field>
+              <input matInput placeholder="Last Order Date" [ngModel]="limitInfo.lastOrder | date: shortDate" formControlName="lastOrder"
+                (ngModelChange)="value=$event">
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start stretch">
+            <mat-form-field>
+              <input matInput placeholder="Current Limit" [(ngModel)]="limitInfo.limit" formControlName="limit">
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start stretch">
+            <mat-form-field>
+              <input matInput placeholder="Currently Used" [(ngModel)]="limitInfo.onOrder" formControlName="onOrder">
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start stretch">
+            <mat-form-field>
+              <input matInput placeholder="In Cart" [(ngModel)]="limitInfo.inCart" formControlName="inCart">
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start stretch">
+            <mat-form-field>
+              <input matInput placeholder="Currently Available" [(ngModel)]="limitInfo.limit" formControlName="limit">
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start stretch">
+            <mat-form-field>
+              <input matInput placeholder="Set Available To" [(ngModel)]="limitInfo.newLimit" formControlName="newLimit">
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+      <button type="submit" (click)="onSubmit()" mat-raised-button color="primary" [disabled]="limitsForm.invalid">Set Available</button>
+    </mat-card-actions>
+  </mat-card>

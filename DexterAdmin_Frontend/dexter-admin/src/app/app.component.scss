@@ -2,42 +2,32 @@
 @import '../assets/themes/dexter-theme.scss';
 
 .main-container {
-     height: 100%;
- }
+  min-height: 100%;
+  height: 100%;
+}
 
- .main-sidenav-content {
-     align-items: center;
-     justify-content: center;
- }
+.main-sidenav {
+  padding: 20px;
+  min-width: 200px;
+}
 
- .main-sidenav {
-     padding: 20px;
-     min-width: 200px;
- }
+[mat-sidenav-container] {
+ min-height: 100vh !important;
+ height: 100vh !important;
+}
 
- [side-nav-button] {
-     margin-bottom: 4px;
- }
+[contentArea] {
+  padding: 4em;
+  min-height: 90vh !important;
+  height: 100% !important;
+}
 
- [side-nav-menu] {
-     width: 100%;
- }
+[siteTitle] {
+  margin-left: 1.5em !important;
+  font-size: larger !important;
+  font-weight: bolder !important;
+}
 
- [limitsCard] {
-     min-width: 300px;
- }
-
- [titlebar] {
-     margin-bottom: 20px;
- }
-
- [limitsCardHeader] /deep/ {
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: mat-color($dexter-app-primary);
-    color: white;
-  }
-
-  footer {
-    margin: 3em 0;
-  }
+footer {
+  margin: 3em 0;
+}

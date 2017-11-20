@@ -1,18 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LimitsPocService } from './services/limits-poc.service';
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
-import { LoginComponent } from './login/login.component';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { environment } from '../environments/environment';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
+import { HttpModule } from "@angular/http";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { AppComponent } from "./app.component";
+import { environment } from "../environments/environment";
+
+import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.component";
+import { LoginComponent, AccountDialogComponent } from "./login/login.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { Ops2Module } from "./ops2/ops2.module";
+import { CoreModule } from "./core/core.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { HomeComponent } from "./home/home.component";
 
 import {
   MatButtonModule,
@@ -26,17 +26,13 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
-  MatDialogModule
-} from '@angular/material';
-
+  MatDialogModule,
+  MatProgressSpinnerModule
+} from "@angular/material";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoadingSpinnerComponent,
-    LoginComponent,
-  ],
+  declarations: [AppComponent, LoadingSpinnerComponent, LoginComponent, DashboardComponent, HomeComponent, AccountDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -52,17 +48,15 @@ import {
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule,
-    FormsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule
+    CoreModule,
+    Ops2Module,
+    AppRoutingModule
   ],
-  providers: [LimitsPocService],
+  providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [LoadingSpinnerComponent]
+  entryComponents: [LoadingSpinnerComponent, AccountDialogComponent]
 })
-export class AppModule { }
+export class AppModule {}

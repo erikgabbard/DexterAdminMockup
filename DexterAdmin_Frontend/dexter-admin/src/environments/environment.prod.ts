@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   limitsApiEndpoint: 'http://localhost:52363/OrderLimitApi',
-  firebase: {
+  firebaseConfig: {
     apiKey: 'AIzaSyCIWOvedzrx2BpTOT6P6wVmlVPlkQhkJ-w',
     authDomain: 'dexter-admin-poc.firebaseapp.com',
     databaseURL: 'https://dexter-admin-poc.firebaseio.com',
