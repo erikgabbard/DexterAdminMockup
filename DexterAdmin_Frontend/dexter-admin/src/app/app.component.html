@@ -9,7 +9,10 @@
     <mat-sidenav #sidenav mode="side" opened="true">
       <app-dashboard></app-dashboard>
     </mat-sidenav>
-    <div contentArea fxFill fxLayout="column" fxLayoutAlign="space-around center">
+    <div contentArea fxFill fxLayout="column" fxLayoutAlign="start center">
+      <mat-toolbar pageToolbar color="accent" fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-panel-title>{{pageTitle}}</mat-panel-title>
+      </mat-toolbar>
       <router-outlet></router-outlet>
       <footer copyright fxLayoutAlign="end center">© 2012 - 2016 by Dexter Solutions, Inc. All rights reserved.</footer>
     </div>

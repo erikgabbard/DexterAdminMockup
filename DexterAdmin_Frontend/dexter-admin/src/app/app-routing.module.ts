@@ -12,16 +12,25 @@ const routes: Routes = [
   {
     path: "ops2/limits",
     component: LimitsComponent,
+    data: {
+      name: "OPS2 Limits"
+    },
     canActivate: [AuthGuard]
   },
   {
     path: "home",
     component: HomeComponent,
+    data: {
+      name: "Home"
+    },
     canActivate: [AuthGuard]
   },
   {
     path: "",
     component: HomeComponent,
+    data: {
+      name: "Home"
+    },
     canActivate: [AuthGuard]
   }
 ];
