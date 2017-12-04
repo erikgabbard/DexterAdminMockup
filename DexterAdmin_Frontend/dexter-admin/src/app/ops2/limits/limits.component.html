@@ -16,8 +16,7 @@
 
           <div fxLayout="row" fxLayoutAlign="start stretch">
             <mat-form-field>
-              <input matInput placeholder="Last Order Date" [ngModel]="limitInfo.lastOrder | date: shortDate" formControlName="lastOrder"
-                (ngModelChange)="value=$event">
+              <input matInput placeholder="Last Order Date" [ngModel]="limitInfo.lastOrder | date: 'MM/dd/yyyy'" formControlName="lastOrder">
             </mat-form-field>
           </div>
 

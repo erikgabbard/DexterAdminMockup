@@ -8,6 +8,7 @@ import { MatMenuModule } from "@angular/material";
 
 @NgModule({
   imports: [CommonModule, AppRoutingModule, RouterModule, FlexLayoutModule, MatMenuModule],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent],
+  exports: [DashboardComponent]
 })
 export class DashboardModule {}

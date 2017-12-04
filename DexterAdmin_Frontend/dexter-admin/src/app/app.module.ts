@@ -8,11 +8,10 @@ import { environment } from "../environments/environment";
 
 import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.component";
 import { LoginComponent, AccountDialogComponent } from "./login/login.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { DashboardModule } from "./dashboard/dashboard.module";
 import { Ops2Module } from "./ops2/ops2.module";
 import { CoreModule } from "./core/core.module";
 import { AppRoutingModule } from "./app-routing.module";
-import { HomeComponent } from "./home/home.component";
 
 import {
   MatButtonModule,
@@ -32,7 +31,7 @@ import {
 
 
 @NgModule({
-  declarations: [AppComponent, LoadingSpinnerComponent, LoginComponent, DashboardComponent, HomeComponent, AccountDialogComponent],
+  declarations: [AppComponent, LoadingSpinnerComponent, LoginComponent, AccountDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -53,7 +52,8 @@ import {
     MatDialogModule,
     CoreModule,
     Ops2Module,
-    AppRoutingModule
+    AppRoutingModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

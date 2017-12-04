@@ -1,6 +1,5 @@
 import { Component, OnInit, NgZone, ViewEncapsulation, Inject } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase/app";
 import * as firebaseui from "firebaseui";
 import { AuthService } from "../core/services/auth.service";
