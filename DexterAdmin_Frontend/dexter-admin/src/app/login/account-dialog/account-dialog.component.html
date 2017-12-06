@@ -1,0 +1,12 @@
+<div *ngIf="user" fxLayout="row" fxLayoutAlign="space-around center">
+  <div fxFlex="25">
+    <img avatar-lg src="{{user.photoURL}}" alt="Member Avatar" />
+  </div>
+  <div fxFlex fxAlign="center center">
+    <div><mat-card-title>{{user.displayName}}</mat-card-title></div>
+    <div><mat-card-subtitle>{{user.email}}</mat-card-subtitle></div>
+  </div>
+</div>
+<div fxLayout="column" fxLayoutAlign="space-around end">
+  <button id="logoutBtn" fxFlexAlign="end" mat-button color="primary" (click)="signOut()">Sign Out</button>
+</div>

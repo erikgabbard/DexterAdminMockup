@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+@import '../../../assets/themes/dexter-theme.scss';
+
+[avatar-lg] {
+  width: 75px;
+  border-radius: 3px;
+  margin-right: 5em !important;
+  border-radius: 50%;
+}

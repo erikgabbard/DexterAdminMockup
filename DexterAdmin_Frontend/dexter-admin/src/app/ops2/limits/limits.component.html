@@ -1,12 +1,10 @@
   <mat-card limitsCard>
-    <mat-card-header limitsCardHeader>
-      <mat-toolbar titlebar color="accent" fxLayout="row" fxLayoutAlign="space-between center">
-        <mat-panel-title>{{title}}</mat-panel-title>
-      </mat-toolbar>
+    <mat-card-header limitsCardHeader fxLayout="row" fxLayoutAlign="center center">
+        <mat-panel-title titlebar>{{title}}</mat-panel-title>
     </mat-card-header>
     <mat-card-content fxLayoutAlign="center">
 
-      <form [formGroup]="limitsForm" (ngSubmit)="onSubmit()" novalidate>
+      <form limitsForm [formGroup]="limitsForm" (ngSubmit)="onSubmit()" novalidate>
         <div fxFill>
           <div fxLayout="row" fxLayoutAlign="start stretch">
             <mat-form-field>

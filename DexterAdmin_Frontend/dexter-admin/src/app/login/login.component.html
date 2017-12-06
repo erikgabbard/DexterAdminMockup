@@ -1,6 +1,7 @@
-<button mat-raised-button userPanel color="accent" *ngIf="loggedInUser" (click)="openDialog()">
+<button mat-button userPanel color="primary" *ngIf="loggedInUser" (click)="openDialog()">
   <div fxLayout="row" fxLayoutAlign="space-around center">
-    <img avatar-sm src="{{loggedInUser.photoURL}}" alt="Member Avatar" /> {{loggedInUser.displayName}}
+    <img avatar-sm src="{{loggedInUser.photoURL}}" alt="Member Avatar" />
+    <div fxShow fxHide.xs="true">{{loggedInUser.displayName}}</div>
   </div>
 </button>
 <div *ngIf="!loggedInUser">

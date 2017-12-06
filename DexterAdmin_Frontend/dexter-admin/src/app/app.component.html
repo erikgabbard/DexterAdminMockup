@@ -1,17 +1,21 @@
 <div fxFill class="main-container">
-  <mat-toolbar titlebar color="primary" fxLayout="row">
-    <img fxFlex="nogrow" src="../assets/img/DexterSolutionsLogo_SM.png">
-    <h1 fxFlex siteTitle>{{siteTitle}}</h1>
+  <mat-toolbar titlebar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button menubutton (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>￼
+    <img siteLogo fxShow fxHide.xs="true" fxFlex="nogrow" src="../assets/img/DexterSolutionsLogo_SM.png">
+    <h1 fxFlex fxShow fxHide.xs="true" siteTitle>{{siteTitle}}</h1>
     <app-login fxFlex="nogrow"></app-login>
   </mat-toolbar>
 
   <mat-sidenav-container fxFlexclass="main-container">
-    <mat-sidenav #sidenav mode="side" opened="true">
+    <mat-sidenav #sidenav mode="over" opened="true">
       <app-dashboard></app-dashboard>
     </mat-sidenav>
     <div contentArea fxFill fxLayout="column" fxLayoutAlign="start center">
-      <mat-toolbar pageToolbar color="accent" fxLayout="row" fxLayoutAlign="space-between center">
-        <mat-panel-title>{{pageTitle}}</mat-panel-title>
+      <mat-toolbar pageToolbar color="accent" fxLayout="row" fxLayoutAlign="start center" class="mat-elevation-z5">
+          <img siteLogo fxHide fxHide.xs="false" fxFlex="nogrow" src="../assets/img/DexterSolutionsLogo_SM.png">
+        <mat-panel-title pageTitle>{{pageTitle}}</mat-panel-title>
       </mat-toolbar>
       <router-outlet></router-outlet>
       <footer copyright fxLayoutAlign="end center">© 2012 - 2016 by Dexter Solutions, Inc. All rights reserved.</footer>

@@ -1,16 +1,18 @@
 @import '~@angular/material/theming';
 @import '../../../assets/themes/dexter-theme.scss';
 
-[limitsCardHeader] /deep/ {
-  padding: 10px;
-  margin-bottom: 20px;
-  background-color: mat-color($dexter-app-primary);
-  color: white;
+$header-background: mat-color($dexter-app-primary, 900);
+
+[limitsCardHeader] {
+  background-color: $header-background;
 }
 
+[titleBar] {
+  color: map-get($dexter-gray, 100) !important;
+  background-color: $header-background;
+  margin: 10px 0;
+}
 
-
-[avatar] {
-  width: 100%;
-  height: 100%;
+[limitsForm] {
+  margin-top: 20px !important;
 }

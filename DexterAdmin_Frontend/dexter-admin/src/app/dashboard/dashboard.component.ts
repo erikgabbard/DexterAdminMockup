@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { RouterModule, Router, Routes } from "@angular/router";
-import { AppRoutingModule } from "../app-routing.module";
-import { AuthService } from "../core/services/auth.service";
-import * as firebase from "firebase/app";
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { RouterModule, Router, Routes } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
+import { AuthService } from '../core/services/auth.service';
+import * as firebase from 'firebase/app';
 
 import {
   MatButtonModule,
@@ -17,12 +17,14 @@ import {
   MatInputModule,
   MatSnackBarModule,
   MatDialogModule
-} from "@angular/material";
+} from '@angular/material';
+
+
 
 @Component({
-  selector: "app-dashboard",
-  templateUrl: "./dashboard.component.html",
-  styleUrls: ["./dashboard.component.scss"],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
@@ -32,12 +34,12 @@ export class DashboardComponent implements OnInit {
     this.authService.user.subscribe(u => {
       this.loggedInUser = u;
     });
-   }
-
-  ngOnInit() {
   }
 
+  ngOnInit() {}
+
   onClick(route: string) {
+
     this.router.navigate([route]);
   }
 }

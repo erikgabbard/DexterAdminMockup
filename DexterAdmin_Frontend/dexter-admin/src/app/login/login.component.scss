@@ -4,16 +4,8 @@
 [userPanel] {
   height: 45px;
   padding: 2px;
+  color: map-get($dexter-gray, 100) !important;
 }
-
-// [userInfoToolbar] {
-//   height: 40px;
-//   padding-top: 2px;
-// }
-
-// [account-card] {
-//   width: 250px;
-// }
 
 [avatar-sm] {
   max-width: 40px;

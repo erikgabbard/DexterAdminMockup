@@ -1,15 +1,24 @@
-import { Component, OnInit, NgZone, ViewEncapsulation, Inject } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import * as firebase from "firebase/app";
-import * as firebaseui from "firebaseui";
-import { AuthService } from "../core/services/auth.service";
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
-import { environment } from "../../environments/environment";
+import {
+  Component,
+  OnInit,
+  NgZone,
+  ViewEncapsulation,
+  Inject
+} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { MatButtonModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+import { AuthService } from '../core/services/auth.service';
+import { environment } from '../../environments/environment';
+import { AccountDialogComponent } from './account-dialog/account-dialog.component';
+
+import * as firebase from 'firebase/app';
+import * as firebaseui from 'firebaseui';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
@@ -33,27 +42,13 @@ export class LoginComponent implements OnInit {
       data: { user: this.loggedInUser }
     });
 
-    dialogRef.afterClosed().subscribe(resetResult => {
-      if (resetResult) {
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      if (dialogResult) {
         this.authService.signOut();
-        document.location.assign(`https://accounts.google.com/Logout?continue=${environment.host}`);
+        document.location.assign(
+          `https://accounts.google.com/Logout?continue=${environment.host}`
+        );
       }
     });
   }
-}
-
-@Component({
-  selector: "app-account-dialog",
-  templateUrl: "./account-dialog.component.html",
-  styleUrls: ["./login.component.scss"]
-})
-export class AccountDialogComponent {
-
-  user: firebase.User;
-
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any) {
-      this.user = data.user;
-    }
-
 }
